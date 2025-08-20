@@ -29,6 +29,13 @@ A beautiful, offline-first mobile application for Trinidad & Tobago Cashpot lott
 - **Developer Information**: Links to source code and support channels
 - **Data Source Disclaimer**: Clear information about data sources and usage
 
+### 📊 **Analytics & Insights (Admin Only)**
+- **User Engagement Tracking**: Monitor app usage and feature popularity
+- **Growth Analytics**: Track user base expansion and retention
+- **Platform Insights**: Understand iOS vs Android vs Web usage
+- **Business Intelligence**: Data-driven decisions for app improvements
+- **Privacy-First Design**: Analytics hidden from regular users
+
 ### 🎨 **User Experience**
 - **Beautiful Design**: Modern, intuitive interface with smooth animations
 - **Responsive Layout**: Optimized for all screen sizes and orientations
@@ -93,6 +100,11 @@ A beautiful, offline-first mobile application for Trinidad & Tobago Cashpot lott
    - Run the SQL schema from `sql_in_supabase.sql`
    - Migrate existing data using the Python migration script
 
+5. **Analytics Setup (Optional)**
+   - Run the analytics SQL script from `sql_analytics_setup.sql`
+   - Creates `app_analytics` and `lottery_actions` tables
+   - Enables user engagement tracking and business insights
+
 5. **Start Development Server**
    ```bash
    npm run dev
@@ -124,7 +136,8 @@ project/
 ├── constants/            # App constants & themes
 ├── types/                # TypeScript type definitions
 ├── utils/                # Utility functions
-└── python_code/          # Data migration scripts
+├── python_code/          # Data migration scripts
+└── sql_analytics_setup.sql # Analytics database setup
 ```
 
 ### **Key Components**
@@ -168,6 +181,13 @@ project/
 - **Connection Testing**: Health checks and error detection
 - **Environment Validation**: Configuration verification
 
+#### **AnalyticsService**
+- **User Tracking**: Automatic app usage monitoring
+- **Device Identification**: Unique device ID generation and management
+- **Action Tracking**: Lottery feature usage analytics
+- **Data Collection**: Seamless background data gathering
+- **Privacy Protection**: User data anonymization and security
+
 ## 🎨 Design System
 
 ### **Color Palette**
@@ -198,6 +218,59 @@ project/
 
 ### **Offline Capabilities**
 - **Local Caching**: SQLite database for offline data access
+
+## 📊 Analytics & User Insights
+
+### **Privacy-First Analytics System**
+- **Admin-Only Access**: User analytics are completely hidden from regular users
+- **Automatic Tracking**: App usage data is collected seamlessly in the background
+- **No User Interface**: Users cannot see analytics about themselves or others
+- **Data Privacy**: Respects user privacy while providing valuable business insights
+
+### **What Gets Tracked**
+- **App Opens**: Every time the app is launched
+- **Unique Users**: How many different people use your app
+- **Platform Usage**: iOS vs Android vs Web breakdown
+- **Feature Engagement**: Which lottery features are most popular
+- **User Behavior**: Search patterns, result checking frequency
+- **Growth Metrics**: User base expansion over time
+
+### **Analytics Tables**
+The system creates two main tables in Supabase:
+
+#### **`app_analytics`**
+- Device identification and platform info
+- App version tracking
+- Open count and frequency
+- First and last usage timestamps
+- User engagement patterns
+
+#### **`lottery_actions`**
+- User interactions with lottery features
+- Search queries and result counts
+- History viewing patterns
+- Data synchronization events
+- Feature popularity metrics
+
+### **Business Intelligence**
+- **Real User Data**: Actual usage, not just download numbers
+- **Engagement Insights**: How often people return to your app
+- **Feature Popularity**: Know which parts users love most
+- **Growth Tracking**: Monitor user base expansion
+- **Platform Insights**: Understand device preferences
+- **Data-Driven Decisions**: Make informed feature improvements
+
+### **Accessing Analytics**
+- **Supabase Dashboard**: View all data in real-time
+- **Table Editor**: Direct access to analytics tables
+- **Data Export**: Download analytics for external analysis
+- **Real-Time Updates**: Live data as users interact with your app
+
+### **Privacy & Compliance**
+- **User Consent**: Analytics collection is transparent
+- **Data Anonymization**: Device IDs are generated, not personal
+- **Admin Control**: Only you can access the analytics data
+- **GDPR Compliant**: Respects user privacy regulations
 - **Smart Sync**: Incremental updates to minimize data transfer
 - **Conflict Resolution**: Handles data conflicts gracefully
 - **Cache Management**: Automatic cache cleanup and optimization
@@ -397,6 +470,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Icons**: [Lucide React Native](https://lucide.dev/) for beautiful iconography
 - **Development**: Built with [Cursor](https://cursor.sh/) and powered by AI assistance
 - **Data Source**: Lottery results from publicly available information
+- **Analytics System**: Privacy-first user engagement tracking for business insights
 
 ## 📞 Support
 

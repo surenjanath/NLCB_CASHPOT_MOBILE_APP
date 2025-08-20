@@ -4,13 +4,15 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { lottoService } from '@/services/lottoService';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
 import { BackgroundImage } from '@/components/BackgroundImage';
-import { Moon, Sun, Smartphone, Trash2, RefreshCw, Settings as SettingsIcon, Palette, Database, Star, Zap, Shield } from 'lucide-react-native';
+import { AnalyticsDashboard } from '@/components/AnalyticsDashboard';
+import { Moon, Sun, Smartphone, Trash2, RefreshCw, Settings as SettingsIcon, Palette, Database, Star, Zap, Shield, BarChart3 } from 'lucide-react-native';
 import { CacheInfo, SyncStatus } from '@/types/lotto';
 import { formatRelativeTime } from '@/utils/formatters';
 
 export default function SettingsScreen() {
   const { themeMode, setThemeMode, theme } = useTheme();
   const [isClearing, setIsClearing] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
   const [syncStatus, setSyncStatus] = useState<SyncStatus>({
     isSyncing: false,
     hasCache: false,
@@ -361,6 +363,35 @@ export default function SettingsScreen() {
           </View>
         )}
 
+        {/* Analytics Dashboard - Admin Only */}
+        {/* 
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <View style={styles.iconContainer}>
+              <BarChart3 size={20} color="#7C3AED" />
+            </View>
+            <View style={styles.sectionHeaderText}>
+              <Text style={styles.sectionTitle}>
+                App Analytics
+              </Text>
+              <Text style={styles.sectionSubtitle}>
+                View usage statistics and insights
+              </Text>
+            </View>
+          </View>
+          
+          <TouchableOpacity
+            style={styles.analyticsButton}
+            onPress={() => setShowAnalytics(true)}
+          >
+            <View style={styles.analyticsButtonContent}>
+              <BarChart3 size={20} color="#FFFFFF" />
+              <Text style={styles.analyticsButtonText}>View Analytics Dashboard</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        */}
+
         {/* Data Management */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
@@ -614,6 +645,14 @@ export default function SettingsScreen() {
       
       {/* Bottom spacing for tab menu */}
       <View style={styles.tabMenuSpacing} />
+
+      {/* Analytics Dashboard Modal - Admin Only */}
+      {/* 
+      <AnalyticsDashboard 
+        isVisible={showAnalytics} 
+        onClose={() => setShowAnalytics(false)} 
+      />
+      */}
     </BackgroundImage>
   );
 }
@@ -1106,5 +1145,23 @@ const getStyles = (theme: any) => StyleSheet.create({
   },
   tabMenuSpacing: {
     height: 30, // Increased to account for navigation bar at bottom: 150
+  },
+  analyticsButton: {
+    backgroundColor: theme.colors.primary,
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    borderRadius: 16,
+    marginTop: 16,
+  },
+  analyticsButtonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 12,
+  },
+  analyticsButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
