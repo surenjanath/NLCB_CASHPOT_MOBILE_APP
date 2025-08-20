@@ -1,20 +1,28 @@
 {
   "expo": {
-    "name": "bolt-expo-nativewind",
-    "slug": "bolt-expo-nativewind",
+    "name": "T&T Cashpot Data App",
+    "slug": "tt-cashpot-data-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "icon": "./assets/images/icon_1024.png",
+    "scheme": "cashpot",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cashpot.ttdataapp"
+    },
+    "android": {
+      "package": "com.cashpot.ttdataapp",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon_512.png",
+        "backgroundColor": "#7C3AED"
+      }
     },
     "web": {
       "bundler": "metro",
       "output": "single",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon_32.png"
     },
     "plugins": ["expo-router", "expo-font", "expo-web-browser"],
     "experiments": {
