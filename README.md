@@ -2,7 +2,16 @@
 
 A beautiful, offline-first mobile application for Trinidad & Tobago Cashpot lottery results, built with React Native, Expo, and Supabase.
 
-![App Screenshot](assets/images/icon_1024.png)
+## 📱 App Showcase
+
+<div align="center">
+  <img src="github_images/home_page.jpeg" alt="Home Page" width="200" />
+  <img src="github_images/historical_results.jpeg" alt="Historical Results" width="200" />
+  <img src="github_images/settings.jpeg" alt="Settings" width="200" />
+  <img src="github_images/about.jpeg" alt="About" width="200" />
+</div>
+
+*Screenshots showcasing the beautiful UI and features of T&T Cashpot Data App*
 
 ## 🌟 Features
 
