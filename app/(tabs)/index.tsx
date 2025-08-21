@@ -254,11 +254,16 @@ export default function HomeScreen() {
         <View style={styles.latestCardContent}>
           <View style={styles.latestCardDateRow}>
             <Text style={styles.latestCardDate}>
-              {new Date(latestResult.date).toLocaleDateString('en-US', { 
-                weekday: 'short', 
-                month: 'short', 
-                day: 'numeric' 
-              })}
+              {(() => {
+                // Parse the date string and force it to be treated as local date
+                const [year, month, day] = latestResult.date.split('-').map(Number);
+                const localDate = new Date(year, month - 1, day); // month is 0-indexed
+                return localDate.toLocaleDateString('en-US', { 
+                  weekday: 'short', 
+                  month: 'short', 
+                  day: 'numeric' 
+                });
+              })()}
             </Text>
             <Text style={styles.latestCardDraw}>#{latestResult.draw_num}</Text>
           </View>
@@ -270,7 +275,7 @@ export default function HomeScreen() {
               </View>
             ))}
             <View style={styles.miniPowerBall}>
-              <Text style={styles.miniPowerBallText}>{latestResult.power_ball}</Text>
+              <Text style={styles.miniPowerBallText}>{latestResult.multiplier}</Text>
             </View>
           </View>
           

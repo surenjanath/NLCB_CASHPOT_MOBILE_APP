@@ -229,7 +229,16 @@ export class LottoService {
     try {
       console.log('💾 Saving cached results...');
       await AsyncStorage.setItem(CACHE_KEY, JSON.stringify(data));
-      const syncTime = new Date().toISOString();
+      // Use local time instead of UTC to avoid timezone issues
+      const syncTime = new Date().toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
       await AsyncStorage.setItem(LAST_SYNC_KEY, syncTime);
       await AsyncStorage.setItem(SYNC_ATTEMPTS_KEY, '0');
       console.log('💾 Cache saved successfully, last sync time:', syncTime);
@@ -461,8 +470,19 @@ export class LottoService {
         console.log(`After merging and deduplication: ${finalResults.length} total results`);
       }
       
+      // Use local time instead of UTC to avoid timezone issues
+      const localTime = new Date().toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+      
       const lottoData: LottoData = {
-        last_updated: new Date().toISOString(),
+        last_updated: localTime,
         results: finalResults,
       };
 
@@ -475,7 +495,7 @@ export class LottoService {
       this.notifySyncStatus({ 
         isSyncing: false, 
         hasCache: true,
-        lastSyncTime: lottoData.last_updated,
+        lastSyncTime: localTime,
         isOnline: true
       });
 

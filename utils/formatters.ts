@@ -17,7 +17,10 @@ export function formatNumbers(numbers: string): string[] {
 
 export function formatDate(dateString: string): string {
   try {
-    const date = new Date(dateString);
+    // Parse the date string and force it to be treated as local date
+    const [year, month, day] = dateString.split('-').map(Number);
+    const date = new Date(year, month - 1, day); // month is 0-indexed
+    
     if (isNaN(date.getTime())) {
       return 'Invalid Date';
     }
@@ -50,8 +53,30 @@ export function formatDate(dateString: string): string {
 
 export function formatRelativeTime(dateString: string): string {
   try {
-    const date = new Date(dateString);
+    let date: Date;
+    
+    // Check if it's an ISO string (contains 'T' and 'Z' or '+')
+    if (dateString.includes('T') || dateString.includes('Z') || dateString.includes('+')) {
+      // It's an ISO string - parse normally
+      date = new Date(dateString);
+    } else {
+      // It's a local date string - parse it manually
+      // Format: "MM/DD/YYYY, HH:MM:SS"
+      const parts = dateString.split(', ');
+      if (parts.length === 2) {
+        const datePart = parts[0]; // "MM/DD/YYYY"
+        const timePart = parts[1]; // "HH:MM:SS"
+        const [month, day, year] = datePart.split('/').map(Number);
+        const [hour, minute, second] = timePart.split(':').map(Number);
+        date = new Date(year, month - 1, day, hour, minute, second);
+      } else {
+        // Fallback to regular parsing
+        date = new Date(dateString);
+      }
+    }
+    
     if (isNaN(date.getTime())) {
+      console.error('Invalid date string:', dateString);
       return 'Invalid Date';
     }
     

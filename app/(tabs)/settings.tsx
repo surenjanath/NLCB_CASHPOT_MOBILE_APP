@@ -110,7 +110,7 @@ export default function SettingsScreen() {
       instagram: 'https://www.instagram.com/surenjanath/',
       youtube: 'https://www.youtube.com/@PythologyProdigy',
       medium: 'https://surenjanath.medium.com/',
-      github: 'https://github.com/surenjanath/nlcb-mobile-app',
+      github: 'https://github.com/surenjanath/NLCB_CASHPOT_MOBILE_APP',
       github_scraper: 'https://github.com/surenjanath/CashPot_Automated_Scraper'
     };
 

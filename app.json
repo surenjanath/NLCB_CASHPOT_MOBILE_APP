@@ -4,20 +4,27 @@
     "slug": "tt-cashpot-data-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon_1024.png",
+    "icon": "./assets/images/icon_512.png",
     "scheme": "cashpot",
+    "splash": {
+      "image": "./assets/images/icon_1024.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.cashpot.ttdataapp"
+      "bundleIdentifier": "com.cashpot.ttdataapp",
+      "icon": "./assets/images/icon_1024.png"
     },
     "android": {
       "package": "com.cashpot.ttdataapp",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon_512.png",
+        "foregroundImage": "./assets/images/icon_1024.png",
         "backgroundColor": "#7C3AED"
-      }
+      },
+      "icon": "./assets/images/icon_1024.png"
     },
     "web": {
       "bundler": "metro",

@@ -1,0 +1,37 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="512" cy="512" r="480" fill="#7C3AED"/>
+  
+  <!-- Lottery balls -->
+  <!-- Ball 1 -->
+  <circle cx="400" cy="400" r="80" fill="#3B82F6"/>
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="white">7</text>
+  
+  <!-- Ball 2 -->
+  <circle cx="300" cy="350" r="70" fill="#10B981"/>
+  <text x="300" y="370" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle" fill="white">2</text>
+  
+  <!-- Ball 3 -->
+  <circle cx="350" cy="500" r="65" fill="#3B82F6"/>
+  <text x="350" y="520" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle" fill="white">$</text>
+  <text x="370" y="500" font-family="Arial, sans-serif" font-size="25" font-weight="bold" text-anchor="middle" fill="white">4</text>
+  
+  <!-- Ball 4 -->
+  <circle cx="600" cy="350" r="75" fill="#F59E0B"/>
+  <text x="600" y="370" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle" fill="white">9</text>
+  
+  <!-- Ball 5 -->
+  <circle cx="650" cy="320" r="50" fill="#EF4444"/>
+  <text x="650" y="340" font-family="Arial, sans-serif" font-size="35" font-weight="bold" text-anchor="middle" fill="white">8</text>
+  
+  <!-- Ball 6 -->
+  <circle cx="550" cy="500" r="60" fill="#10B981"/>
+  <text x="550" y="520" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="white">1</text>
+  
+  <!-- T&T Text -->
+  <text x="512" y="700" font-family="Arial, sans-serif" font-size="80" font-weight="bold" text-anchor="middle" fill="white">T&T</text>
+  
+  <!-- Cashpot Text -->
+  <text x="512" y="800" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="white">CASH</text>
+  <text x="512" y="870" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="white">POT</text>
+</svg>
